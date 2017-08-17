@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(PlayerInventory))]
 public class PlayerInventoryDisplay : MonoBehaviour 
 {
 	// reference to a UI Text object
