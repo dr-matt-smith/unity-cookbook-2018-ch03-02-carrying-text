@@ -11,16 +11,20 @@ public class PlayerInventory : MonoBehaviour
 	//------------------------
 	// cache a reference to the PlayerInventoryDisplay object
 	// that is in the parent GameObject
-	//
-	// and then ensure UI display matches this initial state
+	void Awake()
+	{
+		playerInventoryDisplay = GetComponent<PlayerInventoryDisplay>();
+	}
+
+	//------------------------
+	// Ensure UI display matches this initial state
 	// of whether we are carrying a star or not
 	void Start()
 	{
-		playerInventoryDisplay = GetComponent<PlayerInventoryDisplay>();
 		playerInventoryDisplay.OnChangeCarryingStar(carryingStar);
 	}
 
-	//--------------------------
+    //--------------------------
 	// when we hit a star, update carrying flag
 	// and update the display
 	// (and remove the star GameObject)
